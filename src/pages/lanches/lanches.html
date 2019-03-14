@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Lanches</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <ion-item-sliding *ngFor="let p of lanches">
+        <button ion-item (click)="editLanche(p.id)">
+          <h2>Nome: {{p.nome}}</h2>
+          <h2>Descricao: {{p.descricao}}</h2>
+          <h2>Valor: {{p.valor}}</h2>
+
+       
+        </button>
+        
+
+      </ion-item-sliding>
+
+      <ion-fab left bottom>
+        <button ion-button color="danger" (click)="removeLanche(lanche.id)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+    </ion-fab>
+    </ion-list>
+        
+
+    <ion-fab right bottom>
+        <button ion-fab color="light" (click)="addLanche()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+  </ion-content>
